@@ -2,15 +2,16 @@
 	"i18n": true,
 	"type": "panel",
 	"items": {
-		"option1": {
-			"type": "ip",
+		"host": {
+			"type": "text",
 			"label": "host",
 			"newLine": true
 		},
-		"option2": {
+		"interval": {
 			"type": "number",
 			"label": "request inverval (min)",
-			"newLine": true
+			"newLine": true,
+			"default": 1
 		}
 	}
 }

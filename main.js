@@ -25,6 +25,7 @@ class HmsXxxwAdapter extends utils.Adapter {
 		// this.on("objectChange", this.onObjectChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+		this.updateInterval = null;
 	}
 
 	/**
@@ -35,8 +36,15 @@ class HmsXxxwAdapter extends utils.Adapter {
 
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
 		// this.config:
-		this.log.info("config option1: " + this.config.option1);
-		this.log.info("config option2: " + this.config.option2);
+		this.log.info("config host: " + this.config.host);
+		this.log.info("config interval: " + this.config.interval);
+
+		if (this.config.interval < 0.5) {
+			this.log.info("Set interval to minimum 0.5");
+			this.config.interval = 0.5;
+		}
+
+		this.subscribeStates("*");
 
 		/*
 		For every state in the system there has to be also an object of type state

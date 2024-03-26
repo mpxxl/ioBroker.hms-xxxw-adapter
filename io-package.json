@@ -79,8 +79,8 @@
 		]
 	},
 	"native": {
-		"option1": true,
-		"option2": "42"
+		"host": "",
+		"interval": 1
 	},
 	"objects": [],
 	"instanceObjects": []
