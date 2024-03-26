@@ -3,13 +3,13 @@
 	"type": "panel",
 	"items": {
 		"option1": {
-			"type": "checkbox",
-			"label": "option1",
+			"type": "ip",
+			"label": "host",
 			"newLine": true
 		},
 		"option2": {
-			"type": "text",
-			"label": "option2",
+			"type": "number",
+			"label": "request inverval (min)",
 			"newLine": true
 		}
 	}
