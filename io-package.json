@@ -1,0 +1,87 @@
+{
+	"common": {
+		"name": "hms-xxxw-adapter",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "HMS-xxxW",
+		"titleLang": {
+			"en": "HMS-xxxW",
+			"de": "HMS-xxxW",
+			"ru": "HMS-xxxW",
+			"pt": "HMS-xxxW",
+			"nl": "HMS-xxxW",
+			"fr": "HMS-xxxW",
+			"it": "HMS-xxxW",
+			"es": "HMS-xxxW",
+			"pl": "HMS-xxxW",
+			"uk": "HMS-xxxW",
+			"zh-cn": "HMS-xxxW"
+		},
+		"desc": {
+			"en": "Get values from HMS-xxxW",
+			"de": "Holen Sie sich Werte von HMS-xxxW",
+			"ru": "Получить значения из HMS-xxxW",
+			"pt": "Obtenha valores de HMS-xxxW",
+			"nl": "Haal waarden op van HMS-xxxW",
+			"fr": "Obtenir les valeurs de HMS-xxxW",
+			"it": "Ottieni valori da HMS-xxxW",
+			"es": "Obtener valores de HMS-xxxW",
+			"pl": "Pobierz wartości z HMS-xxxW",
+			"uk": "Отримати значення з HMS-xxxW",
+			"zh-cn": "从HMS-xxxW获取值"
+		},
+		"authors": ["mpxxl <mario.pivk@gmail.com>"],
+		"keywords": ["hms-xxxW hoymiles hms-800W"],
+		"license": "MIT",
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "hms-xxxw-adapter.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/mpxxl/ioBroker.hms-xxxw-adapter/main/admin/hms-xxxw-adapter.png",
+		"readme": "https://github.com/mpxxl/ioBroker.hms-xxxw-adapter/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "daemon",
+		"type": "protocols",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=3.3.22"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=5.1.13"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
