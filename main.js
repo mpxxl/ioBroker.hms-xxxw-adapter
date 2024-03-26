@@ -101,7 +101,7 @@ class HmsXxxwAdapter extends utils.Adapter {
 	}
 
 	async ReadDtu() {
-		PythonShell.defaultOptions = { scriptPath: "hoymiles-wifi/hoymiles-wifi" };
+		PythonShell.defaultOptions = { scriptPath: "hoymiles-wifi/hoymiles_wifi" };
 
 		PythonShell.runString(
 			"from hoymiles_wifi.dtu import DTU; dtu = DTU('" +
