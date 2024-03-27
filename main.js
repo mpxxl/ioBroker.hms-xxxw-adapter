@@ -114,7 +114,7 @@ class HmsXxxwAdapter extends utils.Adapter {
 			"import asyncio;" +
 			"import sys;" +
 			"sys.path.append('/opt/iobroker/node_modules/iobroker.hms-xxxw-adapter/hoymiles_wifi/hoymiles_wifi');" +
-			"from hoymiles_wifi.dtu import DTU;" +
+			"from dtu import DTU;" +
 			"dtu = DTU('" +
 			host +
 			"');" +
