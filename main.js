@@ -112,6 +112,10 @@ class HmsXxxwAdapter extends utils.Adapter {
 	createScipt(host, func_name) {
 		return (
 			"import asyncio;" +
+			"import sys;" +
+			"sys.path.append('./hoymiles_wifi');" +
+			"sys.path.append('./crcmod');" +
+			"sys.path.append('./google');" +
 			"from hoymiles_wifi.dtu import DTU;" +
 			"dtu = DTU('" +
 			host +
