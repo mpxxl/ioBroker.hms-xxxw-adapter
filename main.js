@@ -101,6 +101,7 @@ class HmsXxxwAdapter extends utils.Adapter {
 	}
 
 	async getRealDataHMS() {
+		PythonShell.defaultOptions.scriptPath = "./hoymiles_wifi/hoymiles_wifi";
 		PythonShell.runString(this.createScipt(this.config.host, "async_get_real_data_hms")).then((messages) => {
 			// results is an array consisting of messages collected during execution
 			messages.forEach((m) => {
