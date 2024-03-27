@@ -103,12 +103,11 @@ class HmsXxxwAdapter extends utils.Adapter {
 	async ReadDtu() {
 		//PythonShell.defaultOptions = { scriptPath: "hoymiles-wifi/hoymiles_wifi" };
 
-		PythonShell.runString(
-			"import asyncio; from hoymiles_wifi.hoymiles_wifi.dtu import DTU; dtu = DTU('" +
-				this.config.host +
-				"'); var task = asyncio.create_task(dtu.async_get_real_data()); print(task.result());",
-			undefined,
-		).then((messages) => {
+		PythonShell.runString("import asyncio");
+		PythonShell.runString("from hoymiles_wifi.hoymiles_wifi.dtu import DTU");
+		PythonShell.runString("dtu = DTU('" + this.config.host + "'); ");
+		PythonShell.runString("var task = asyncio.create_task(dtu.async_get_real_data());");
+		PythonShell.runString("print(task.result());").then((messages) => {
 			// results is an array consisting of messages collected during execution
 			messages.forEach((m) => {
 				this.log.info(m);
