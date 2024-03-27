@@ -104,10 +104,9 @@ class HmsXxxwAdapter extends utils.Adapter {
 		//PythonShell.defaultOptions = { scriptPath: "hoymiles-wifi/hoymiles_wifi" };
 
 		PythonShell.runString(
-			"x=1;print(x)",
-			/*"from hoymiles_wifi.dtu import DTU; dtu = DTU('" +
+			"from hoymiles-wifi.hoymiles_wifi.dtu import DTU; dtu = DTU('" +
 				this.config.host +
-				"');response = await dtu.async_get_real_data();print(response);",*/
+				"');response = await dtu.async_get_real_data();print(response);",
 			undefined,
 		).then((messages) => {
 			// results is an array consisting of messages collected during execution
