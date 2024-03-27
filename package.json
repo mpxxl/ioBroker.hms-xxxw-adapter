@@ -53,12 +53,10 @@
   "files": [
     "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
     "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
-    "lib/",
-    
-    "hoymiles_wifi/hoymiles_wifi/*.py",
-    "hoymiles_wifi/hoymiles_wifi/protobuf/*.{py,proto}",
-    "crcmod/python3/crcmod/*.{py,pyc}",
-    "crcmod/python3/crcmod/_pycache_*.{py,pyc}",
+    "lib/",    
+    "hoymiles_wifi/**",
+    "crcmod/**",
+    "google/**",
     "www/",
     "io-package.json",
     "LICENSE",
