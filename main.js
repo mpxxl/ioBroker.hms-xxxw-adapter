@@ -46,10 +46,10 @@ class HmsXxxwAdapter extends utils.Adapter {
 
 		this.subscribeStates("*");
 
-		await this.ReadDtu();
+		await this.getRealDataHMS();
 		this.updateInterval = setInterval(
 			async () => {
-				await this.ReadDtu();
+				await this.getRealDataHMS();
 			},
 			this.config.interval * 60 * 1000,
 		);
@@ -100,23 +100,29 @@ class HmsXxxwAdapter extends utils.Adapter {
 		this.log.info("check group user admin group admin: " + result);*/
 	}
 
-	async ReadDtu() {
-		//PythonShell.defaultOptions = { scriptPath: "hoymiles-wifi/hoymiles_wifi" };
-
-		PythonShell.runString(
-			"import asyncio;" +
-				"from hoymiles_wifi.hoymiles_wifi.dtu import DTU;" +
-				"dtu = DTU('" +
-				this.config.host +
-				"'); " +
-				"task = asyncio.create_task(dtu.async_get_real_data());" +
-				"print(task.result());",
-		).then((messages) => {
+	async getRealDataHMS() {
+		PythonShell.runString(this.createScipt(this.config.host, "async_get_real_data_hms")).then((messages) => {
 			// results is an array consisting of messages collected during execution
 			messages.forEach((m) => {
 				this.log.info(m);
 			});
 		});
+	}
+
+	createScipt(host, func_name) {
+		return (
+			"import asyncio;" +
+			"import sys;" +
+			"sys.path.append('./hoymiles_wifi/hoymiles_wifi');" +
+			"from hoymiles_wifi.dtu import DTU;" +
+			"dtu = DTU('" +
+			host +
+			"');" +
+			"task = asyncio.run(dtu." +
+			func_name +
+			"()) ;" +
+			"print(task);"
+		);
 	}
 	/**
 	 * Is called when adapter shuts down - callback has to be called under any circumstances!
