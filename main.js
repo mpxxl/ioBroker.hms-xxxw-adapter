@@ -112,9 +112,7 @@ class HmsXxxwAdapter extends utils.Adapter {
 	createScipt(host, func_name) {
 		return (
 			"import asyncio;" +
-			"import sys;" +
-			"sys.path.append('/opt/iobroker/node_modules/iobroker.hms-xxxw-adapter/hoymiles_wifi/hoymiles_wifi');" +
-			"from dtu import DTU;" +
+			"from hoymiles_wifi.dtu import DTU;" +
 			"dtu = DTU('" +
 			host +
 			"');" +
